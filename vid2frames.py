@@ -22,7 +22,7 @@ parser.add_argument('-imgf','--image_format',
                     type = string,
                     required = False,
                     default = 'png',
-                    choices = ['jpg', 'png', 'gif', 'tif']
+                    choices = ['jpg', 'png', 'gif', 'tif'],
                     help ='Path to save dir')
   
 args = parser.parse_args()
