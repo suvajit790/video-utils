@@ -9,17 +9,17 @@ parser = argparse.ArgumentParser(description ='Video to frames generator')
   
 # Adding Arguments
 parser.add_argument('-s', '--source',
-                    type = string,
+                    type = str,
                     required = True,
                     help ='Path to video')
 
 parser.add_argument('-d','--destination',
-                    type = string,
+                    type = str,
                     required = True,
                     help ='Path to save dir')
 
 parser.add_argument('-imgf','--image_format',
-                    type = string,
+                    type = str,
                     required = False,
                     default = 'png',
                     choices = ['jpg', 'png', 'gif', 'tif'],
