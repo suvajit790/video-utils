@@ -4,30 +4,7 @@ import cv2
 import os
 import argparse
 
-# Initialize the Parser
-parser = argparse.ArgumentParser(description ='Video to frames generator')
-  
-# Adding Arguments
-parser.add_argument('-s', '--source',
-                    type = str,
-                    required = True,
-                    help ='Path to video')
-
-parser.add_argument('-d','--destination',
-                    type = str,
-                    required = True,
-                    help ='Path to save dir')
-
-parser.add_argument('-imgf','--image_format',
-                    type = str,
-                    required = False,
-                    default = 'png',
-                    choices = ['jpg', 'png', 'gif', 'tif'],
-                    help ='Path to save dir')
-  
-args = parser.parse_args()
-
-def vid2frames(source=args.source, destination=args.destination, img_format=args.image_format):
+def vid2frames(source, destination, img_format):
     # Read the video from specified path
     cam = cv2.VideoCapture(source)
     
@@ -63,3 +40,29 @@ def vid2frames(source=args.source, destination=args.destination, img_format=args
     
     # Release all space and windows once done
     cam.release()
+
+# Initialize the Parser
+parser = argparse.ArgumentParser(description ='Video to frames generator')
+  
+# Adding Arguments
+parser.add_argument('-s', '--source',
+                    type = str,
+                    required = True,
+                    help ='Path to video')
+
+parser.add_argument('-d','--destination',
+                    type = str,
+                    required = True,
+                    help ='Path to save dir')
+
+parser.add_argument('-imgf','--image_format',
+                    type = str,
+                    required = False,
+                    default = 'png',
+                    choices = ['jpg', 'png', 'gif', 'tif'],
+                    help ='Path to save dir')
+  
+args = parser.parse_args()
+
+
+vid2frames(source=args.source, destination=args.destination, img_format=args.image_format)
